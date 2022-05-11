@@ -21,6 +21,7 @@ int main(){
 	    if(!SetPrivilege(hToken, SE_DEBUG_NAME, TRUE)){
 	    	CloseHandle(hToken);
 	    	std::cout << "Cannot set to Debug mode: " << GetLastError() << "\n";
+	    	std::cout << "Chay bang quyen administrator";
 	    }
 	    else{
 	    	CloseHandle(hToken);
@@ -30,7 +31,6 @@ int main(){
 
 
 	do{
-		//char thamso;
 		std::cout << "\n1.Taskkill theo PID";
 		std::cout << "\n2.Taskkill theo taskName";
 		std::cout << "\n3.Hien thi bang process";

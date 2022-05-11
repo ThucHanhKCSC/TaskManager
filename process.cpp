@@ -30,19 +30,6 @@ void displayProcess(){
 
 				HANDLE hProcess = 0;
 
-////////////////////////////////////////////////////////
-
-//HANDLE hProcess=GetCurrentProcess();
-//HANDLE hToken;
-
-//if (OpenProcessToken(hProcess, TOKEN_ADJUST_PRIVILEGES, &hToken))
-//{
-//   SetPrivilege(hToken, SE_DEBUG_NAME, TRUE);
-//   CloseHandle(hToken);
-//}
-
-//////////////////////////////////////////////////////////
-
 				hProcess = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION , FALSE, procEntry.th32ProcessID);
 				if(!hProcess)
 					std::cout << "Error: " << GetLastError() << " ";
